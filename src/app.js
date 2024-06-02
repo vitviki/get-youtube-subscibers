@@ -1,9 +1,8 @@
 const express = require("express");
 const app = express();
-
-// Your code goes here
-app.use(express.json());
 const Subscribers = require("./models/subscribers.js");
+
+app.use(express.json());
 
 // Get all Subscribers
 app.get("/subscribers", async (req, res) => {
@@ -56,7 +55,7 @@ app.post("/subscribers/add", async (req, res) => {
   }
 });
 
-// Delete a subscriber
+// Delete a subscriber by ID
 app.delete("/subscribers/:id", async (req, res) => {
   try {
     const { id } = req.params;

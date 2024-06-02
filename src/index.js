@@ -9,7 +9,9 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Modified the code to connect to remote MONGO DB instead of local DB
 const DATABASE_URL = process.env.MONGODB_URL;
+
 // Connect to DATABASE
 mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
