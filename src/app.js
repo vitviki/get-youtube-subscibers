@@ -48,6 +48,7 @@ app.get("/subscribers/:id", async (req, res) => {
 // Add a subscriber
 app.post("/subscribers/add", async (req, res) => {
   try {
+    console.log(req.body);
     const subscriber = await Subscribers.create(req.body);
     res.status(200).json(subscriber);
   } catch (error) {

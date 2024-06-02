@@ -49,27 +49,17 @@
             <div class="shadow-lg option-box bg-gray-2 text-white d-flex flex-column align-items-center py-5 px-2 gap-5">
                 <i class="bi bi-person-fill-gear h1"></i>
                 <h3 class="text-center">Get all subscriber's names</h3>
-                <p class=" text-center">This API route will return all subscribers with their id, name and channelID</p>
+                <p class=" text-center mt-4">This API route will return all subscribers with their id, name and channelID</p>
                 <input class="w-50" type="submit" value="Submit" onclick="getAllSubscribersNames(event)"/>
 
             </div>
             <div class="shadow-lg option-box bg-gray d-flex flex-column align-items-center py-5 px-2 gap-5">
                 <i class="bi bi-person-vcard h1"></i>
                 <h3>Get one subscriber</h3>
-                <p class="text-center mt-4">This API route will return all subscribers with their id, name and channelID</p>
+                <p class="text-center">This API route will return all subscribers with their id, name and channelID</p>
                 <form class="d-flex flex-column justify-content-center align-items-center gap-2" onsubmit="return getSubscriber(event)">
                     <input type="text" placeholder="ID" id="subsciberID" />
                     <input class="w-50" type="submit" value="Submit"/>
-                </form>
-            </div>
-            <div class="shadow-lg option-box bg-gray-2 text-white d-flex flex-column align-items-center py-5 px-2 gap-5">
-                <i class="bi bi-person-fill-add h1"></i>
-                <h3 class="text-center">Add a subscriber</h3>
-                <p class=" text-center mt-4">This API route will return all subscribers with their id, name and channelID</p>
-                <form class="d-flex flex-column justify-content-center align-items-center gap-2  ">
-                    <textarea  placeholder="Enter a valid json"></textarea>
-                    <input class="w-50" type="submit" value="Submit"/>
-                    
                 </form>
             </div>
         </div>
@@ -97,7 +87,6 @@
                 window.open(url, '_blank').focus();
             }
         }
-
     </script>
 </body>
 </html>
