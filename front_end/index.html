@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <title>AlmaBetter - Get Youtube Subscribers</title>
+    <style>
+        .h-full {
+            height: 100vh;
+        }
+
+        .w-full { 
+            width: 100vw;
+        }
+
+        .option-box {
+            max-width: 50%;
+            max-height: 75%;
+            height: 75%;
+            width: 50%;
+        }
+
+        .bg-gray {
+            background-color: rgb(212, 203, 203)
+        }
+
+        .bg-gray-2 {
+            background-color: rgb(49, 49, 49)
+        }
+   
+    </style>
+</head>
+<body>
+    <header class="w-100 px-5 py-3 border border-secondary d-flex align-items-center gap-3">
+        <i class="bi bi-youtube h1 text-danger"></i>
+        <h3>Subscribers</h3>
+    </header>
+    <main class="h-full w-full bg-secondary py-3">
+        <div class="w-75 h-75 m-auto px-5 d-flex align-items-center gap-4">
+            <div class="shadow-lg option-box bg-gray d-flex flex-column align-items-center py-5 px-2 gap-5">
+                <i class="bi bi-people-fill h1"></i>
+                <h3>Get all subscribers</h3>
+                <p class="text-center mt-4">This API route will return all subscribers with their id, name and channelID</p>
+                <input class="w-50" type="submit" value="Submit" onclick="getAllSubscribers(event)"/>
+
+            </div>
+            <div class="shadow-lg option-box bg-gray-2 text-white d-flex flex-column align-items-center py-5 px-2 gap-5">
+                <i class="bi bi-person-fill-gear h1"></i>
+                <h3 class="text-center">Get all subscriber's names</h3>
+                <p class=" text-center">This API route will return all subscribers with their id, name and channelID</p>
+                <input class="w-50" type="submit" value="Submit" onclick="getAllSubscribersNames(event)"/>
+
+            </div>
+            <div class="shadow-lg option-box bg-gray d-flex flex-column align-items-center py-5 px-2 gap-5">
+                <i class="bi bi-person-vcard h1"></i>
+                <h3>Get one subscriber</h3>
+                <p class="text-center mt-4">This API route will return all subscribers with their id, name and channelID</p>
+                <form class="d-flex flex-column justify-content-center align-items-center gap-2" onsubmit="return getSubscriber(event)">
+                    <input type="text" placeholder="ID" id="subsciberID" />
+                    <input class="w-50" type="submit" value="Submit"/>
+                </form>
+            </div>
+            <div class="shadow-lg option-box bg-gray-2 text-white d-flex flex-column align-items-center py-5 px-2 gap-5">
+                <i class="bi bi-person-fill-add h1"></i>
+                <h3 class="text-center">Add a subscriber</h3>
+                <p class=" text-center mt-4">This API route will return all subscribers with their id, name and channelID</p>
+                <form class="d-flex flex-column justify-content-center align-items-center gap-2  ">
+                    <textarea  placeholder="Enter a valid json"></textarea>
+                    <input class="w-50" type="submit" value="Submit"/>
+                    
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        const mainURL = "https://get-youtube-subscibers.onrender.com/"
+        function getAllSubscribers(event) {
+            event.preventDefault();
+            const url = mainURL + "subscribers";
+            console.log(url);
+            window.open(url, '_blank').focus();
+        }
+
+        function getAllSubscribersNames(event) {
+            event.preventDefault();
+            const url = mainURL + "subscribers/names";
+            window.open(url, '_blank').focus();
+        }
+
+        function getSubscriber(event) {
+            event.preventDefault();
+            const subID = document.getElementById("subsciberID").value;
+            if (subID.length > 0) {
+                const url = mainURL + "subscribers/" + subID;
+                window.open(url, '_blank').focus();
+            }
+        }
+
+    </script>
+</body>
+</html>
